@@ -1,8 +1,12 @@
 package com.app.temproject.shipper.Activity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,7 +21,7 @@ import com.app.temproject.shipper.R;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    private boolean doubleBackToExitPressOnce = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +55,46 @@ public class HomeActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            if(doubleBackToExitPressOnce){
+                super.onBackPressed();
+                return;
+            }
+            this.doubleBackToExitPressOnce = true;
+
+            final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+            alertDialogBuilder.setMessage("Do you want to exit?");
+
+
+
+            alertDialogBuilder.setPositiveButton("yes", new DialogInterface.OnClickListener(){
+                @Override
+                public void onClick(DialogInterface arg0, int arg1){
+                    finish();
+
+                    Intent intent = new Intent(Intent.ACTION_MAIN);
+                    intent.addCategory(Intent.CATEGORY_HOME);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+
+                    android.os.Process.killProcess(android.os.Process.myPid());
+                    System.exit(1);
+                }
+            });
+
+            alertDialogBuilder.setNegativeButton("no", new DialogInterface.OnClickListener(){
+                @Override
+                public void onClick(DialogInterface arg0, int arg1){
+                }
+            });
+            final AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+
+            new Handler().postDelayed(new Runnable(){
+                @Override
+                public void run(){
+                    doubleBackToExitPressOnce = false;
+                }
+            }, 2000);
         }
     }
 
