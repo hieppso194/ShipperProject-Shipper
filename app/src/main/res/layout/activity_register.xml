@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#1818d4"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đăng Ký"
+            android:textSize="18dp"
+            android:textColor="#FFFFFFFF"
+            android:id="@+id/buttondangkytaikhoan"
+            android:background="@drawable/a_btn_background"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="72dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tài Khoản"
+            android:id="@+id/textViewtaikhoandangky"
+            android:textSize="18dp"
+            android:textColor="#FFFFFFFF"
+            android:layout_marginBottom="46dp"
+            android:layout_above="@+id/textViewmatkhaudangky"
+            android:layout_toLeftOf="@+id/buttondangkytaikhoan"
+            android:layout_toStartOf="@+id/buttondangkytaikhoan" />" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mật Khẩu"
+            android:id="@+id/textViewmatkhaudangky"
+            android:textColor="#FFFFFFFF"
+            android:textSize="18dp"
+            android:layout_centerVertical="true"
+            android:layout_alignLeft="@+id/textViewtaikhoandangky"
+            android:layout_alignStart="@+id/textViewtaikhoandangky" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Shipper"
+            android:id="@+id/textView2"
+            android:textSize="35dp"
+            android:textColor="#FFFFFFFF"
+            android:layout_marginBottom="62dp"
+            android:layout_above="@+id/textViewtaikhoandangky"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xác nhận"
+            android:id="@+id/textViewxacnhandangky"
+            android:layout_marginTop="47dp"
+            android:textColor="#FFFFFFFF"
+            android:textSize="18dp"
+            android:layout_below="@+id/textViewmatkhaudangky"
+            android:layout_alignLeft="@+id/textViewmatkhaudangky"
+            android:layout_alignStart="@+id/textViewmatkhaudangky" />
+
+    </RelativeLayout>
+</LinearLayout>

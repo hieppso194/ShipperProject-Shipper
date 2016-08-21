@@ -1,12 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#1818d4"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:text="login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal">
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đăng Nhập"
+            android:textSize="18dp"
+            android:textColor="#FFFFFFFF"
+            android:id="@+id/buttondangkytaikhoan"
+            android:background="@drawable/a_btn_background"
+            android:layout_marginLeft="34dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="97dp"
+            android:layout_below="@+id/textViewmatkhaudangky"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đăng Ký"
+            android:textSize="18dp"
+            android:textColor="#FFFFFFFF"
+            android:id="@+id/buttondangky"
+            android:background="@drawable/a_btn_background"
+            android:layout_alignTop="@+id/buttondangkytaikhoan"
+            android:layout_alignRight="@+id/editTextmatkhau"
+            android:layout_alignEnd="@+id/editTextmatkhau"
+            android:layout_marginRight="38dp"
+            android:layout_marginEnd="38dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tài Khoản"
+            android:id="@+id/textViewtaikhoandangky"
+            android:layout_marginTop="85dp"
+            android:textSize="18dp"
+            android:textColor="#FFFFFFFF"
+            android:layout_below="@+id/textView2"
+            android:layout_alignLeft="@+id/buttondangkytaikhoan"
+            android:layout_alignStart="@+id/buttondangkytaikhoan" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mật Khẩu"
+            android:id="@+id/textViewmatkhaudangky"
+            android:layout_marginTop="47dp"
+            android:textColor="#FFFFFFFF"
+            android:textSize="18dp"
+            android:layout_below="@+id/textViewtaikhoandangky"
+            android:layout_alignRight="@+id/textViewtaikhoandangky"
+            android:layout_alignEnd="@+id/textViewtaikhoandangky" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/editTextmatkhau"
+            android:background="@drawable/a_textview_background"
+            android:layout_alignBottom="@+id/textViewmatkhaudangky"
+            android:layout_toRightOf="@+id/buttondangkytaikhoan" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTexttaikhoan"
+            android:background="@drawable/a_textview_background"
+            android:layout_alignLeft="@+id/editTextmatkhau"
+            android:layout_alignStart="@+id/editTextmatkhau"
+            android:layout_above="@+id/textViewmatkhaudangky"
+            android:layout_alignRight="@+id/editTextmatkhau"
+            android:layout_alignEnd="@+id/editTextmatkhau" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextquenmatkhau"
+            android:text="Quên mật khẩu?"
+            android:textColor="#FFFFFFFF"
+            android:textSize="15dp"
+            android:onClick="onClick"
+            android:clickable="true"
+            android:layout_below="@+id/editTextmatkhau"
+            android:layout_alignLeft="@+id/editTextmatkhau"
+            android:layout_alignStart="@+id/editTextmatkhau" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Shipper"
+            android:id="@+id/textView2"
+            android:textSize="35dp"
+            android:textColor="#FFFFFFFF"
+            android:layout_marginTop="51dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textViewtaikhoandangky"
+            android:layout_toEndOf="@+id/textViewtaikhoandangky" />
+
+    </RelativeLayout>
 </LinearLayout>
